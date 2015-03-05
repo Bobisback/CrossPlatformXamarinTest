@@ -24,11 +24,11 @@ namespace Phoneword_iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextField PhoneNumberText { get; set; }
+		UILabel ErrorLabel { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel thissgadh { get; set; }
+		UITextField PhoneNumberText { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -44,13 +44,13 @@ namespace Phoneword_iOS
 				enterAPhoneWord.Dispose ();
 				enterAPhoneWord = null;
 			}
+			if (ErrorLabel != null) {
+				ErrorLabel.Dispose ();
+				ErrorLabel = null;
+			}
 			if (PhoneNumberText != null) {
 				PhoneNumberText.Dispose ();
 				PhoneNumberText = null;
-			}
-			if (thissgadh != null) {
-				thissgadh.Dispose ();
-				thissgadh = null;
 			}
 			if (TranslateButton != null) {
 				TranslateButton.Dispose ();

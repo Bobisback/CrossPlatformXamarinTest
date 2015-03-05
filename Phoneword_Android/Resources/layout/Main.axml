@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:focusableInTouchMode="true">
     <TextView
         android:text="Enter a Phoneword:"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -14,15 +15,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/PhoneNumberText"
-        android:text="1-855-XAMARIN" />
+        android:text="1-855-XAMARIN"
+        android:selectAllOnFocus="true" />
     <Button
         android:text="Translate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TraslateButton" />
+        android:id="@+id/TranslateButton"
+        android:focusable="true"
+        android:clickable="true" />
     <Button
         android:text="Call"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/CallButton" />
+        android:id="@+id/CallButton"
+        android:focusable="true"
+        android:clickable="true" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="61.0dp"
+        android:id="@+id/ErrorLabel"
+        android:text="Error Label"
+        android:gravity="center"
+        android:visibility="invisible" />
 </LinearLayout>

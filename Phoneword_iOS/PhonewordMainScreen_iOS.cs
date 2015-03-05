@@ -26,21 +26,34 @@ namespace Phoneword_iOS
         public override void ViewDidLoad() {
             base.ViewDidLoad();
 
-            string translatedNumber = "";
+			PhoneNumberText.WeakDelegate = this;
+			PhoneNumberText.AccessibilityIdentifier = "PhoneNumberText";
+
+			ErrorLabel.AccessibilityIdentifier = "ErrorLabel";
+
+			string translatedNumber = string.Empty;
 
             TranslateButton.TouchUpInside += (object sender, EventArgs e) => {
                 translatedNumber = PhonewordSharedCode.PhoneTranslator.ToNumber(PhoneNumberText.Text);
 
                 PhoneNumberText.ResignFirstResponder();
 
-                if (translatedNumber == "") {
+				if (translatedNumber.Contains("Error: ")) {
                     CallButton.SetTitle("Call", UIControlState.Normal);
                     CallButton.Enabled = false;
+
+					if (translatedNumber.Contains("Error: Validation Failed")) {
+						ErrorLabel.Hidden = false;
+						ErrorLabel.Text = "Validation Failed: Please check Phone Format.";
+					}
                 } else {
                     CallButton.SetTitle("Call " + translatedNumber, UIControlState.Normal);
-                    CallButton.Enabled = true;
+					CallButton.Enabled = true;
+					ErrorLabel.Hidden = true;
+					ErrorLabel.Text = string.Empty;
                 }
             };
+			TranslateButton.AccessibilityIdentifier = "TranslateButton";
 
             CallButton.TouchUpInside += (object sender, EventArgs e) => {
                 var url = new NSUrl("tel:" + translatedNumber);
@@ -51,9 +64,11 @@ namespace Phoneword_iOS
                         null,
                         "Ok",
                         null);
+					alertView.AccessibilityIdentifier = "AlertViewTelSchemeNotSupported";
                     alertView.Show();
                 }
             };
+			CallButton.AccessibilityIdentifier = "CallButton";
         }
 
         public override void ViewWillAppear(bool animated) {
@@ -73,5 +88,10 @@ namespace Phoneword_iOS
         }
 
         #endregion
+
+		[Export("textFieldDidBeginEditing:")]
+		public void EditingStarted (UITextField textField) {
+			textField.SelectAll (this);
+		}
     }
 }

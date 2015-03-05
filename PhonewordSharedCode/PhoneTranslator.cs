@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace PhonewordSharedCode
 {
     static class PhoneTranslator {
         public static string ToNumber(string raw) {
             if (string.IsNullOrWhiteSpace(raw))
-                return "";
+                return "Error: Null or Whitespace";
             else
                 raw = raw.ToUpperInvariant();
 
@@ -22,8 +23,19 @@ namespace PhonewordSharedCode
                 }
                 // otherwise we've skipped a non-numeric char
             }
+
+			if (!validatePhoneword(newNumber.ToString())) {
+				return "Error: Validation Failed";
+			}
+
             return newNumber.ToString();
         }
+
+		static bool validatePhoneword(string raw) {
+			Regex phonewordValidation = new Regex(@"^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$");
+
+			return phonewordValidation.IsMatch(raw);
+		}
 
         static bool Contains(this string keyString, char c) {
             return keyString.IndexOf(c) >= 0;
