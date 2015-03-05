@@ -15,7 +15,7 @@ public class ValidatePhonewordTests {
     [TestFixtureSetUp]
     public void TestFixtureSetup() {
 		PathToIPA = "../../../Phoneword_iOS/bin/iPhoneSimulator/Debug/TestProject.app";
-		PathToAPK = "../../../Phoneword_Android/bin/Debug/Phoneword_Android.Phoneword_Android-Signed.apk";
+		PathToAPK = "../../../Phoneword_Android/bin/Debug/Phoneword_Android.Phoneword_Android.apk";
     }
 
 	[TestCase(Platform.iOS)]

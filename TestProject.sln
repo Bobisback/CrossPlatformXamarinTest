@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoneword_iOS", "Phoneword_iOS\Phoneword_iOS.csproj", "{8A2E92DD-FF01-410C-A4F6-90AB1530B3E4}"
@@ -11,7 +11,15 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PhonewordSharedCode", "Phon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhonewordValidation.UITests", "PhonewordValidation.UITests\PhonewordValidation.UITests.csproj", "{FB00E123-0112-4AE0-9551-91175D4675F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhonewordSharedCode.UnitTests", "PhonewordSharedCode.UnitTests\PhonewordSharedCode.UnitTests.csproj", "{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		PhonewordSharedCode\PhonewordSharedCode.projitems*{61ecd3b8-5019-4de0-aa76-fa8bbe9ba68b}*SharedItemsImports = 13
+		PhonewordSharedCode\PhonewordSharedCode.projitems*{8a2e92dd-ff01-410c-a4f6-90ab1530b3e4}*SharedItemsImports = 4
+		PhonewordSharedCode\PhonewordSharedCode.projitems*{b0ea8648-9632-48f8-895d-366755f7a133}*SharedItemsImports = 4
+		PhonewordSharedCode\PhonewordSharedCode.projitems*{25384be7-5e8f-4cee-8d46-0e69cc6ae9e1}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|iPhone = Ad-Hoc|iPhone
@@ -116,11 +124,30 @@ Global
 		{FB00E123-0112-4AE0-9551-91175D4675F5}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{FB00E123-0112-4AE0-9551-91175D4675F5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{FB00E123-0112-4AE0-9551-91175D4675F5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		PhonewordSharedCode\PhonewordSharedCode.projitems*{61ecd3b8-5019-4de0-aa76-fa8bbe9ba68b}*SharedItemsImports = 13
-		PhonewordSharedCode\PhonewordSharedCode.projitems*{8a2e92dd-ff01-410c-a4f6-90ab1530b3e4}*SharedItemsImports = 4
-		PhonewordSharedCode\PhonewordSharedCode.projitems*{b0ea8648-9632-48f8-895d-366755f7a133}*SharedItemsImports = 4
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Ad-Hoc|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Ad-Hoc|Mixed Platforms.Build.0 = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.AppStore|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.AppStore|Mixed Platforms.Build.0 = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{25384BE7-5E8F-4CEE-8D46-0E69CC6AE9E1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

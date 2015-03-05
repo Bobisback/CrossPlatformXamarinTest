@@ -14,7 +14,7 @@ namespace PhonewordSharedCode
 
             var newNumber = new StringBuilder();
             foreach (var c in raw) {
-                if (" -0123456789".Contains(c))
+                if (" ().-0123456789".Contains(c))
                     newNumber.Append(c);
                 else {
                     var result = TranslateToNumber(c);
@@ -24,14 +24,14 @@ namespace PhonewordSharedCode
                 // otherwise we've skipped a non-numeric char
             }
 
-			if (!validatePhoneword(newNumber.ToString())) {
+            if (!ValidatePhoneword(newNumber.ToString())) {
 				return "Error: Validation Failed";
 			}
 
             return newNumber.ToString();
         }
 
-		static bool validatePhoneword(string raw) {
+		public static bool ValidatePhoneword(string raw) {
 			Regex phonewordValidation = new Regex(@"^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$");
 
 			return phonewordValidation.IsMatch(raw);
@@ -41,7 +41,7 @@ namespace PhonewordSharedCode
             return keyString.IndexOf(c) >= 0;
         }
 
-        static int? TranslateToNumber(char c) {
+        public static int? TranslateToNumber(char c) {
             if ("ABC".Contains(c))
                 return 2;
             else if ("DEF".Contains(c))
